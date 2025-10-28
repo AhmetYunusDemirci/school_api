@@ -1,5 +1,6 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :update, :destroy]
+  before_action :authenticate_request, except: [:create]
 
   # GET /teachers
   def index
@@ -44,6 +45,6 @@ class TeachersController < ApplicationController
   end
 
   def teacher_params
-    params.require(:teacher).permit(:name, :email, :department_id)
+  params.require(:teacher).permit(:name, :email, :password, :password_confirmation, :department_id)
   end
 end
