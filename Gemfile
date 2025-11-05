@@ -4,7 +4,7 @@ gem "rails", "~> 8.0.3"
 gem "puma", ">= 5.0"
 gem "sqlite3", ">= 2.1"
 gem "bcrypt", "~> 3.1.17"
-gem "jwt", "~> 2.6"
+gem "jwt", "~> 3.1"
 gem "rack-cors", "~> 3.0"
 
 gem "bootsnap", require: false
