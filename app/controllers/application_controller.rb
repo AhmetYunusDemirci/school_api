@@ -3,7 +3,13 @@ class ApplicationController < ActionController::API
 	include JsonWebToken
 
 	private
-
+   def preflight
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, PATCH, DELETE, OPTIONS'
+    headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, Accept, Authorization'
+    head :no_content
+   end
+   
 	def authenticate_request
 		header = request.headers['Authorization']
 		header = header.split(' ').last if header
